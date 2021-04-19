@@ -1,6 +1,8 @@
-#include "includes/libft.h"
+#include "libft.h"
 
 void    ft_memdel(void **ap) {
-    free(*ap);
-    *ap = NULL;
+    if(ap != NULL && *ap != NULL) {
+        free(*ap);
+        *ap = NULL;
+    }
 }

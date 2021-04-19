@@ -1,11 +1,9 @@
-#include "./includes/libft.h"
+#include "libft.h"
 
-size_t ft_strlen(const char *s) {
-		size_t lenght;
-
-		lenght = 0;
-		while (s[lenght] != '\0') {
-			lenght++;
-		}
-		return (lenght);
+size_t ft_strlen(const char *str) {
+    size_t i = 0;
+    while (str[i] != '\0') {
+        i++;
+    }
+    return i;
 }
