@@ -1,25 +1,27 @@
 #include "libft.h"
 
-static void print_nbr_fd(unsigned n, int fd);
+static void	print_nbr_fd(unsigned int n, int fd)
+{
+	char	digit;
 
-void 	ft_putnbr_fd(int n, int fd) {
-    size_t minus;
-    unsigned int value;
-
-    minus = n < 0;
-    if (minus) {
-        ft_putchar_fd('-', fd);
-        value = -n;
-    } else
-        value = n;
-    print_nbr_fd(value, fd);
+	if (n > 9)
+		print_nbr_fd(n / 10, fd);
+	digit = n % 10 + '0';
+	ft_putchar_fd(digit, fd);
 }
 
-static void print_nbr_fd(unsigned n, int fd){
-    char digit;
+void	ft_putnbr_fd(int n, int fd)
+{
+	size_t			minus;
+	unsigned int	value;
 
-    if(n > 9)
-        print_nbr_fd(n / 10, fd);
-    digit = n % 10 + '0';
-    ft_putchar_fd(digit, fd);
+	minus = n < 0;
+	if (minus)
+	{
+		ft_putchar_fd('-', fd);
+		value = -n;
+	}
+	else
+		value = n;
+	print_nbr_fd(value, fd);
 }
