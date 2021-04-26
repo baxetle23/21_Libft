@@ -11,13 +11,8 @@ int	ft_atoi(const char *str)
 	flag = 1;
 	while (*s == ' ' || (*s >= 9 && *s <= 13))
 		s++;
-	if (*s == '-')
-	{
-		s++;
-		flag = -1;
-	}
-	else if (*s == '+')
-		s++;
+	if (*s == '-' || *s == '+')
+		flag = ',' - *s++;
 	while (ft_isdigit(*s))
 	{
 		nbr = nbr * 10 + (*s - '0');
