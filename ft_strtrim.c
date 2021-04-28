@@ -1,8 +1,6 @@
 #include "libft.h"
 
 static char	check_set(const char *set, char ch);
-static char	*ft_strnew(size_t size);
-static void	*ft_memalloc(size_t size);
 
 char	*ft_strtrim(const char *s, const char *set)
 {
@@ -44,20 +42,4 @@ char	check_set(const char *set, char ch)
 		i++;
 	}
 	return (0);
-}
-
-char	*ft_strnew(size_t size)
-{
-	return ((char *)ft_memalloc(size + 1));
-}
-
-void	*ft_memalloc(size_t size)
-{
-	void	*pointer;
-
-	pointer = malloc(size);
-	if (pointer == NULL)
-		return (pointer);
-	ft_bzero(pointer, size);
-	return (pointer);
 }
